@@ -16,8 +16,7 @@ server.use("/contact",contactRouter)
 
 
 mongoose.connect(
-    "mongodb://localhost:27017/",
-    {dbName:"ContactManegment"}
+    process.env.MONGO_URL
 ).then(
     ()=>{
         server.listen(5000,
