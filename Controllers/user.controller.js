@@ -23,8 +23,8 @@ const userController={
 
         res.cookie("user_Token",token,
             { 
-             httpOnly: false, 
-             secure: false,
+             httpOnly: true, 
+             secure: true,
              sameSite:'lax',
              maxAge: 1000 * 60 * 60 * 24  // 24 hrs  
             }
@@ -51,8 +51,8 @@ const userController={
                 const token=jwt.sign({...user.toJSON()},process.env.JWT_KEY,{expiresIn:"24h"})
                 res.cookie("user_Token",token,
                     { 
-                     httpOnly: false, 
-                     secure: false,
+                     httpOnly: true, 
+                     secure: true,
                      sameSite:'lax',
                      maxAge: 1000 * 60 * 60 * 24  // 24 hrs  
                     }
