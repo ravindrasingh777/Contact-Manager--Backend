@@ -7,7 +7,7 @@ const contactRouter = require("./Routers/contact.router");
 
 
 const server=express();
-server.use(cors({origin:"http://localhost:3000",credentials:true}));
+server.use(cors({origin:process.env.ACCESS_URL,credentials:true}));
 server.use(express.json()) //middleware
 server.use(express.static("./Public"))
 
